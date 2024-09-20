@@ -15,13 +15,16 @@ class ProductController extends Controller
     public function index() : View
     {
     //get all products
-    //$products = Product::select("products.*", "category_product.product_category_name as product_category_name")
+    //$products = Product::select("products.*", "category_product.product_category_name as product_category_name", "supplier.nama_supplier as supplier_name")
+    //                    ->join('category_product', 'category_product.id', '=', 'products.product_category_id')
     //                    ->join('category_product', 'category_product.id', '=', 'products.product_category_id')
     //                    ->latest()
     //                    ->paginate(10);
     
     $product = new Product;
-    $products = $product->get_product()->latest()->paginate(10);
+    $products = $product->get_product()
+                        ->latest()
+                        ->paginate(10);
 
     //render view with products
     return view('products.index', compact('products'));
