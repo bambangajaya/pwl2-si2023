@@ -23,9 +23,9 @@
                                 <tr>
                                     <th scope="col">Nama Supplier</th>
                                     <th scope="col">Alamat Supplier</th>
-                                    <th scope="col">PIC Supplier</th> <!-- Menampilkan nama PIC Supplier -->
+                                    <th scope="col">PIC Supplier</th> 
                                     <th scope="col">No Hp PIC Supplier</th>
-                                    <th scope="col">Actions</th> <!-- Kolom aksi -->
+                                    <th scope="col">Actions</th> 
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +33,8 @@
                                     <tr>
                                         <td>{{ $s->supplier_name }}</td>
                                         <td>{{ $s->alamat_supplier }}</td>
-                                        <td>{{ $s->pic_supplier}}</td> <!-- Menampilkan nama PIC Supplier -->
-                                        <td>{{ $s->no_hp_pic_supplier }}</td> <!-- Menampilkan No Hp PIC Supplier -->
+                                        <td>{{ $s->pic_supplier}}</td> 
+                                        <td>{{ $s->no_hp_pic_supplier }}</td> 
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('supplier.destroy', $s->id) }}" method="POST">
                                                 <a href="{{ route('supplier.show', $s->id) }}" class="btn btn-sm btn-dark">Show</a>
@@ -52,7 +52,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $supplier->links() }} <!-- Pagination -->
+                        {{ $supplier->links() }} 
                     </div>
                 </div>
             </div>

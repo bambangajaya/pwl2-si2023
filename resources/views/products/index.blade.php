@@ -22,7 +22,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">Image</th>
-                                    <th scope="col">Supplier</th> <!-- Menampilkan Supplier -->
+                                    <th scope="col">Supplier</th> 
                                     <th scope="col">Title</th>
                                     <th scope="col">Category</th>
                                     <th scope="col">Price</th>
@@ -36,7 +36,7 @@
                                         <td scope="text-center">
                                             <img src="{{ asset('/storage/products/'.$product->image) }}" class="rounded" style="width: 100px">
                                         </td>
-                                        <td>{{ $product->supplier_name }}</td> <!-- Menampilkan nama supplier dari join -->
+                                        <td>{{ $product->supplier_name }}</td> 
                                         <td>{{ $product->title }}</td>
                                         <td>{{ $product->product_category_name }}</td>
                                         <td>{{ "Rp " . number_format($product->price,2,',','.') }}</td>

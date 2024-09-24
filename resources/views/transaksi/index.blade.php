@@ -17,16 +17,17 @@
                 </div>
                 <div class="card border-0 shadow-sm rounded">
                     <div class="card-body">
+                    <a href="{{ route('transaksi.create') }}" class="btn btn-md btn-success mb-3">Add transaksi penjualan</a>
                         <table class="table table-bordered">
                             <thead>
                                 <tr>
                                     <th scope="col">Tanggal Transaksi</th>
                                     <th scope="col">Nama Kasir</th>
                                     <th scope="col">Nama Produk</th>
-                                    <th scope="col">Kategori Produk</th> <!-- Menampilkan Kategori Produk -->
-                                    <th scope="col">Harga</th> <!-- Mengubah dari Harga Satuan menjadi Harga -->
+                                    <th scope="col">Kategori Produk</th>
+                                    <th scope="col">Harga</th> 
                                     <th scope="col">Jumlah</th>
-                                    <th scope="col">Total Harga</th> <!-- Menampilkan Total Harga -->
+                                    <th scope="col">Total Harga</th> 
                                     <th scope="col" style="width: 20%">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -36,10 +37,10 @@
                                         <td>{{ $transaksi->tanggal_transaksi }}</td>
                                         <td>{{ $transaksi->nama_kasir }}</td>
                                         <td>{{ $transaksi->product_name }}</td>
-                                        <td>{{ $transaksi->category_name }}</td> <!-- Menampilkan kategori -->
-                                        <td>{{ "Rp " . number_format($transaksi->product_price, 2, ',', '.') }}</td> <!-- Menampilkan Harga -->
+                                        <td>{{ $transaksi->category_name }}</td> 
+                                        <td>{{ "Rp " . number_format($transaksi->product_price, 2, ',', '.') }}</td>
                                         <td>{{ $transaksi->jumlah_pembelian }}</td>
-                                        <td>{{ "Rp " . number_format($transaksi->product_price * $transaksi->jumlah_pembelian, 2, ',', '.') }}</td> <!-- Menampilkan Total Harga -->
+                                        <td>{{ "Rp " . number_format($transaksi->product_price * $transaksi->jumlah_pembelian, 2, ',', '.') }}</td>
                                         <td class="text-center">
                                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('transaksi.destroy', $transaksi->id) }}" method="POST">
                                                 <a href="{{ route('transaksi.show', $transaksi->id) }}" class="btn btn-sm btn-dark">Show</a>
