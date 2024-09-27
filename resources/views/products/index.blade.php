@@ -34,7 +34,8 @@
                                 @forelse ($products as $product)
                                     <tr>
                                         <td scope="text-center">
-                                            <img src="{{ asset('/storage/products/'.$product->image) }}" class="rounded" style="width: 100px">
+                                        <img src="{{ Storage::url('images/' . $product->image) }}" alt="Product Image" width="100">
+
                                         </td>
                                         <td>{{ $product->supplier_name }}</td> 
                                         <td>{{ $product->title }}</td>
